@@ -1,0 +1,288 @@
+/* General Styling */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdf9f3;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: transparent;
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  margin: 0.5rem 1rem;
+  text-decoration: none;
+  color: #2b2b2b;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #f2789f;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 8vw;
+  max-width: 1400px;
+  margin: auto;
+  flex-grow: 1;
+  gap: 3rem;
+}
+
+.profileImage {
+  width:400px;
+  height: fixed;
+;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profileImage:hover {
+  transform: scale(1.02);
+}
+
+.homeDesc {
+  flex: 1;
+  max-width: 600px;
+  color: #222;
+}
+
+.homeDesc h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #ea5f89;
+  margin-bottom: 1rem;
+}
+
+.nameDesc {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #444;
+}
+
+/* Footer / Social Icons */
+.footer {
+  width: 100%;
+  padding: 1.5rem 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: auto;
+}
+
+.footer a {
+  color: #ea5f89;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #000;
+}
+
+/* Three Column Flexbox */
+.three-column-flex {
+  display: flex;
+  justify-content: center;
+  gap: 32px; /* space between columns */
+  margin-top: 24px;
+}
+
+.column {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  background: #fff; /* optional: for visual separation */
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Title Styling */
+.title h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #ea5f89; /* updated to match footer icon pink */
+  margin: 32px 0 24px 0;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* Internships Section */
+.internships-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 0 auto 40px auto;
+  flex-wrap: wrap;
+}
+
+.internship-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(26, 115, 232, 0.07);
+  padding: 32px 24px 24px 24px;
+  text-align: center;
+  width: 260px;
+  transition: transform 0.18s;
+}
+
+.internship-card img {
+  margin-bottom: 18px;
+  border-radius: 8px;
+}
+
+.internship-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(26, 115, 232, 0.13);
+}
+
+.internship-card p {
+  color: #333;
+  font-size: 1.08rem;
+  margin: 0;
+}
+
+/* Project Cards Section */
+.project-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(26, 115, 232, 0.07);
+  padding: 22px 18px 16px 18px;
+  width: 300px;
+  min-height: 370px; /* Ensures all cards are the same height */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.project-preview {
+  width: 100%;
+  max-width: 260px;
+  height: 160px; /* Fixed height for uniformity */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(234, 95, 137, 0.13);
+}
+
+.project-card .project-link {
+  color: #ea5f89;
+  text-decoration: underline;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.project-card .project-link:hover {
+  color: #1a73e8;
+}
+
+.project-card p {
+  color: #333;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Button Styling */
+.main-btn {
+  background: linear-gradient(90deg, #000 40%, #c0c0c0 100%); /* Black and Silver */
+  color: #fff;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: background 0.2s, transform 0.2s;
+  display: inline-block;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.main-btn:hover {
+  background: linear-gradient(90deg, #e53935 40%, #000 100%); /* Red and Black on hover */
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(229,57,53,0.13);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .homeDesc {
+    max-width: 100%;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .footer {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+.yaleLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
