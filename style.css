@@ -259,6 +259,20 @@ nav a:hover::after {
   box-shadow: 0 6px 24px rgba(229,57,53,0.13);
 }
 
+/* Jolie Den Section Background */
+.jolie-den-bg {
+  background: url('https://i.pinimg.com/originals/cf/40/0e/cf400ed10d2897cd18762def1d775a7f.gif') center center/cover no-repeat;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Make all <p> inside Jolie Den section white */
+.jolie-den-bg p {
+  color: #fff;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero-container {
