@@ -26,19 +26,18 @@
     .intro-text {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 50px auto;
-      background: linear-gradient(135deg, #f8f5f0 0%, #f0ebe5 100%);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      margin: 0 auto 40px auto;
+      background: #f8f8f8;
+      padding: 25px;
+      border-radius: 10px;
       border-left: 4px solid #f2789f;
     }
 
     .intro-text p {
-      font-size: 1.1rem;
-      color: #2b2b2b;
+      font-size: 1rem;
+      color: #555;
       margin-bottom: 15px;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .intro-text p:last-child {
@@ -49,46 +48,33 @@
 
     .project-cards-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
       margin-top: 40px;
     }
 
     .project-card {
-      background: linear-gradient(135deg, #fcfaf8 0%, #f5f1eb 100%);
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-top: 4px solid #f2789f;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(45deg, transparent, rgba(242, 120, 159, 0.1));
-      border-radius: 0 0 0 100px;
+      border-top: 3px solid #f2789f;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
     }
 
     .project-preview {
       width: 100% !important;
       max-width: none !important;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 12px !important;
-      margin-bottom: 20px !important;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+      border-radius: 8px !important;
+      margin-bottom: 15px !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
       transition: transform 0.3s ease;
     }
 
@@ -137,6 +123,12 @@
         padding: 20px 15px;
       }
     }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .project-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 <body>
@@ -171,7 +163,7 @@
       </div>
       <div class="project-card">
         <img 
-          src="https://i.ibb.co/mF9bZY0f/EVB01540-1.jpg" 
+          src="https://i.ibb.co/7JTDLHDy/EVB01137-2.jpg" 
           alt="Coinbase Watch Party Preview" 
           class="project-preview"
           style="width:100%;max-width:260px;border-radius:10px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.08);"
@@ -201,7 +193,7 @@
       </div>
       <div class="project-card">
         <img 
-          src="https://i.ibb.co/7JTDLHDy/EVB01137-2.jpg" 
+          src="https://i.ibb.co/qM0QJpCm/Screenshot-2026-03-10-at-9-50-52-AM.png" 
           alt="Ticketmaster x NYL Preview" 
           class="project-preview"
           style="width:100%;max-width:260px;border-radius:10px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,0.08);"
@@ -297,87 +289,51 @@ const bumbleImages = [
 
 const ticketmasterImages = [
   {
-    src: "https://i.ibb.co/7JTDLHDy/EVB01137-2.jpg",
-    desc: "Event photo 1"
+    src: "https://i.ibb.co/qM0QJpCm/Screenshot-2026-03-10-at-9-50-52-AM.png",
+    desc: "Ticketmaster image 1"
   },
   {
-    src: "https://i.ibb.co/pBFgw9Ct/EVB01075-2.jpg",
-    desc: "Event photo 2"
+    src: "https://i.ibb.co/1YbrqXKB/Screenshot-2026-03-10-at-9-49-18-AM.png",
+    desc: "Ticketmaster image 2"
   },
   {
-    src: "https://i.ibb.co/FqyRfFQq/EVB01073-2.jpg",
-    desc: "Event photo 3"
+    src: "https://i.ibb.co/Fkt1Dhqp/Screenshot-2026-03-10-at-9-42-36-AM.png",
+    desc: "Ticketmaster image 3"
   },
   {
-    src: "https://i.ibb.co/qMkF79c7/20241018-LIBERTY-WATCH-PARTY-XCD-2773-1.jpg",
-    desc: "Event photo 4"
+    src: "https://i.ibb.co/pr0R1c5v/Screenshot-2026-03-10-at-9-41-07-AM.png",
+    desc: "Ticketmaster image 4"
   },
   {
-    src: "https://i.ibb.co/zW2X6NbY/20241018-LIBERTY-WATCH-PARTY-XCD-2746.jpg",
-    desc: "Event photo 5"
-  },
-  {
-    src: "https://i.ibb.co/zhM4kPL8/20241018-LIBERTY-WATCH-PARTY-XCD-2714.jpg",
-    desc: "Event photo 6"
+    src: "https://i.ibb.co/LdksHGf0/Screenshot-2026-03-10-at-9-40-45-AM.png",
+    desc: "Ticketmaster image 5"
   }
 ];
 
 const coinbaseImages = [
   {
-    src: "https://i.ibb.co/mF9bZY0f/EVB01540-1.jpg",
-    desc: "Event photo 1"
+    src: "https://i.ibb.co/7JTDLHDy/EVB01137-2.jpg",
+    desc: "Coinbase event photo 1"
   },
   {
-    src: "https://i.ibb.co/R47SwkWr/EVB01560-1.jpg",
-    desc: "Event photo 2"
+    src: "https://i.ibb.co/pBFgw9Ct/EVB01075-2.jpg",
+    desc: "Coinbase event photo 2"
   },
   {
-    src: "https://i.ibb.co/YFyT7HCV/EVB01568-1.jpg",
-    desc: "Event photo 3"
+    src: "https://i.ibb.co/FqyRfFQq/EVB01073-2.jpg",
+    desc: "Coinbase event photo 3"
   },
   {
-    src: "https://i.ibb.co/dvVdH52/EVB01569.jpg",
-    desc: "Event photo 4"
+    src: "https://i.ibb.co/qMkF79c7/20241018-LIBERTY-WATCH-PARTY-XCD-2773-1.jpg",
+    desc: "Coinbase event photo 4"
   },
   {
-    src: "https://i.ibb.co/YB9nZNcP/EVB01575-1.jpg",
-    desc: "Event photo 5"
+    src: "https://i.ibb.co/zW2X6NbY/20241018-LIBERTY-WATCH-PARTY-XCD-2746.jpg",
+    desc: "Coinbase event photo 5"
   },
   {
-    src: "https://i.ibb.co/hJQtDPym/EVB01578-2.jpg",
-    desc: "Event photo 6"
-  },
-  {
-    src: "https://i.ibb.co/bRQN6jdQ/EVB01623-2.jpg",
-    desc: "Event photo 7"
-  },
-  {
-    src: "https://i.ibb.co/n8DRHFsd/EVB01632-1.jpg",
-    desc: "Event photo 8"
-  },
-  {
-    src: "https://i.ibb.co/wNqq9YSH/EVB01642.jpg",
-    desc: "Event photo 9"
-  },
-  {
-    src: "https://i.ibb.co/ksbf7WHP/EVB01675-2.jpg",
-    desc: "Event photo 10"
-  },
-  {
-    src: "https://i.ibb.co/5WVccCTR/EVB01679-2.jpg",
-    desc: "Event photo 11"
-  },
-  {
-    src: "https://i.ibb.co/VWjvwv9Y/EVB01684.jpg",
-    desc: "Event photo 12"
-  },
-  {
-    src: "https://i.ibb.co/6LwGYNK/EVB01687-1.jpg",
-    desc: "Event photo 13"
-  },
-  {
-    src: "https://i.ibb.co/7xnjyxjT/EVB05371.jpg",
-    desc: "Event photo 14"
+    src: "https://i.ibb.co/zhM4kPL8/20241018-LIBERTY-WATCH-PARTY-XCD-2714.jpg",
+    desc: "Coinbase event photo 6"
   }
 ];
 

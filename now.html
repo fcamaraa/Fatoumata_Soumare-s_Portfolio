@@ -7,134 +7,256 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
   <style>
+    body {
+      background: #fafafa;
+      font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      min-height: 100vh;
+    }
+
     section {
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 40px 30px;
       line-height: 1.7;
     }
 
-    .project-divider {
-      width: 60%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #f2789f, transparent);
-      margin: 50px auto;
-      position: relative;
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+      justify-content: center;
     }
 
-    .project-divider::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 8px;
-      height: 8px;
-      background: #f2789f;
-      border-radius: 50%;
-      box-shadow: 0 0 0 3px #fdf9f3;
+    .projects-grid .project-container:nth-child(5) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 600px;
     }
 
-    .intro-section {
-      text-align: center;
-      margin-bottom: 60px;
-      padding: 30px;
-      background: linear-gradient(135f, #f8f5f0 0%, #f0ebe5 100%);
+    .role-intro {
+      text-align: center; 
+      margin-bottom: 40px; 
+      padding: 20px;
+      background: white;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      border-left: 4px solid #f2789f;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e5e5e5;
     }
 
-    .profile-image {
-      display: block;
-      margin: 0 auto 25px auto;
-      max-width: 280px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    .role-layout {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .role-layout .image-container {
+      flex: 0 0 220px;
+    }
+
+    .role-layout .text-container {
+      flex: 1;
+    }
+
+    .profile-img {
+      display: block; 
+      margin: 0; 
+      max-width: 100%; 
+      width: 100%; 
+      border-radius: 15px; 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
+      border: 3px solid #fff;
     }
 
-    .profile-image:hover {
+    .profile-img:hover {
       transform: translateY(-5px);
     }
 
-    .intro-section div {
-      font-size: 1.1rem;
-      color: #2b2b2b;
-      line-height: 1.6;
+    .role-text {
+      font-size: 1.1rem; 
+      color: #555; 
+      line-height: 1.6; 
+      margin: 0;
+      font-weight: 400;
     }
 
-    h3 {
-      font-size: 1.8rem;
-      color: #2b2b2b;
-      margin: 30px 0 15px 0;
-      font-weight: 600;
-      border-bottom: 3px solid #f2789f;
-      padding-bottom: 8px;
-      display: inline-block;
-    }
-
-    p em {
-      color: #666;
-      font-style: italic;
-      font-size: 0.95rem;
-      display: block;
-      margin-bottom: 20px;
-      padding-left: 20px;
-      border-left: 3px solid #f2789f;
-      background: #f8f5f0;
-      padding: 12px 20px;
-      border-radius: 5px;
-    }
-
-    p {
-      font-size: 1.05rem;
-      color: #444;
-      margin-bottom: 20px;
-      text-align: justify;
-    }
-
-    p strong {
-      color: #2b2b2b;
-      font-size: 1.1rem;
-      display: block;
-      margin: 25px 0 15px 0;
-    }
-
-    ul {
-      background: #fcfaf8;
-      padding: 25px 30px;
-      border-radius: 10px;
-      border-left: 4px solid #f2789f;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-
-    li {
-      font-size: 1.02rem;
-      color: #2b2b2b;
-      margin-bottom: 12px;
-      padding-left: 10px;
-      position: relative;
-    }
-
-    li::before {
-      content: '▸';
-      color: #f2789f;
-      font-weight: bold;
-      position: absolute;
-      left: -5px;
+    .role-title {
+      color: #f2789f; 
+      font-size: 1.4rem; 
+      font-weight: 600; 
+      display: block; 
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .title h2 {
       font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 50px;
-      color: #2b2b2b;
-      font-weight: 300;
+      margin-bottom: 40px;
+      color: #333;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .project-container {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 0;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e5e5e5;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: fit-content;
+    }
+
+    .project-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: #333;
+      margin: 0 0 15px 0;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h3 a {
+      transition: color 0.3s ease;
+    }
+
+    h3 a:hover {
+      color: #f2789f !important;
+    }
+
+    .project-subtitle {
+      color: #666;
+      font-style: italic;
+      font-size: 1rem;
+      display: block;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      background: #f8f8f8;
+      border-radius: 8px;
+      border-left: 4px solid #f2789f;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .role-header {
+      color: #f2789f;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 10px;
+      text-transform: uppercase;
       letter-spacing: 1px;
     }
-  </style>
+
+    ul {
+      background: #f8f8f8;
+      padding: 20px 25px;
+      border-radius: 8px;
+      border-left: 4px solid #f2789f;
+      margin-bottom: 0;
+    }
+
+    li {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    li::before {
+      content: '•';
+      color: #f2789f;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-divider {
+      width: 60px;
+      height: 2px;
+      background: #f2789f;
+      margin: 40px auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      section {
+        padding: 30px 20px;
+      }
+      
+      .title h2 {
+        font-size: 2rem;
+      }
+      
+      .role-layout {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+      
+      .role-layout .image-container {
+        flex: none;
+      }
+      
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .project-container {
+        padding: 20px;
+      }
+      
+      h3 {
+        font-size: 1.5rem;
+      }
+      
+      .role-intro {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+      }
+      
+      .profile-img {
+        max-width: 180px;
+        margin: 0 auto;
+      }
+      
+      .role-title {
+        font-size: 1.2rem;
+      }
+      
+      .role-text {
+        font-size: 1rem;
+      }
+    }
 
   </style>
 </head>
@@ -154,107 +276,118 @@
     </div>
     
     <!-- Role Introduction -->
-    <div class="intro-section">
-      <img 
-        src="https://i.ibb.co/PH4RCZT/IMG-5566.jpg"
-        alt="Fatoumata Soumare"
-        class="profile-image"
-      >
-      <div>
-        <strong>Partnership Marketing Coordinator at Roc Nation</strong><br>
-        Leading brand activations and managing key entertainment partnerships with top-tier brands and celebrity talent
+    <div class="role-intro">
+      <div class="role-layout">
+        <div class="image-container">
+          <img 
+            src="https://i.ibb.co/PH4RCZT/IMG-5566.jpg"
+            alt="Fatoumata Soumare"
+            class="profile-img"
+          >
+        </div>
+        <div class="text-container">
+          <div class="role-text">
+            <span class="role-title">Partnership Marketing Coordinator at Roc Nation</span>
+            Leading brand activations and managing key entertainment partnerships with top-tier brands and celebrity talent
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Kodansha House -->
-    <h3>Kodansha House</h3>
-    <p><em>Kodansha House x Megan Thee Stallion Roc Nation | NYC Pop-Up Activation</em></p>
-    
-    <p>
-      One of the leading manga companies, Kodansha, activated around Comic Con with a pop-up experience in NYC — Kodansha House — running October 4th through the 19th. Megan Thee Stallion dropped in afterhours on opening day to film behind-the-scenes content for a collaboration post, including stills and clips.
-    </p>
-    
-    <p><strong>My Role:</strong></p>
-    <ul>
-      <li>Developed a comprehensive production document detailing arrival logistics, key contacts, and the run of show (ROS)</li>
-      <li>Led a venue walkthrough to secure the space ahead of Megan Thee Stallion's arrival</li>
-      <li>Managed payment coordination between Kodansha House and Roc Nation, liaising directly with both finance teams</li>
-      <li>Spearheaded pre-production calls aligning MTS's creative team, artist management, and the Kodansha team</li>
-    </ul>
-
-      <div class="project-divider"></div>
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <!-- Kodansha House -->
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/reels/DPpB-DAEltp/" target="_blank" style="text-decoration: none; color: inherit;">Kodansha House</a></h3>
+        <div class="project-subtitle">Kodansha House x Megan Thee Stallion Roc Nation | NYC Pop-Up Activation</div>
+        
+        <div class="project-description">
+          One of the leading manga companies, Kodansha, activated around Comic Con with a pop-up experience in NYC — Kodansha House — running October 4th through the 19th. Megan Thee Stallion dropped in afterhours on opening day to film behind-the-scenes content for a collaboration post, including stills and clips.
+        </div>
+        
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Developed a comprehensive production document detailing arrival logistics, key contacts, and the run of show (ROS)</li>
+          <li>Led a venue walkthrough to secure the space ahead of Megan Thee Stallion's arrival</li>
+          <li>Managed payment coordination between Kodansha House and Roc Nation, liaising directly with both finance teams</li>
+          <li>Spearheaded pre-production calls aligning MTS's creative team, artist management, and the Kodansha team</li>
+        </ul>
+      </div>
 
       <!-- UberEats -->
-      <h3>UberEats</h3>
-      <p><em>Uber Eats x Megan Thee Stallion Roc Nation | Holiday Gifting Campaign</em></p>
-      
-      <p>
-        Uber Eats partnered with Betches and Megan Thee Stallion to position Uber Eats as the go-to solution for holiday gifting — making it easier than ever to send thoughtful gifts, last-minute surprises, and personalized treats. The campaign showcased Megan highlighting different gifting categories through hero video, social content, and in-app creative.
-      </p>
-      
-      <p><strong>My Role:</strong></p>
-      <ul>
-        <li>Developed a comprehensive production document to guide all campaign logistics</li>
-        <li>Spearheaded pre-production calls to align all stakeholders ahead of execution</li>
-        <li>Managed asset delivery, coordinating the transfer of all campaign materials from Uber Eats to the Roc Nation creative team</li>
-        <li>Oversaw the organization and uploading of all asset versions into their designated trackers, ensuring accuracy and accessibility across the team</li>
-      </ul>
-
-      <div class="project-divider"></div>
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/reels/DSa0rQqFS77/" target="_blank" style="text-decoration: none; color: inherit;">UberEats</a></h3>
+        <div class="project-subtitle">Uber Eats x Megan Thee Stallion Roc Nation | Holiday Gifting Campaign</div>
+        
+        <div class="project-description">
+          Uber Eats partnered with Betches and Megan Thee Stallion to position Uber Eats as the go-to solution for holiday gifting — making it easier than ever to send thoughtful gifts, last-minute surprises, and personalized treats. The campaign showcased Megan highlighting different gifting categories through hero video, social content, and in-app creative.
+        </div>
+        
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Developed a comprehensive production document to guide all campaign logistics</li>
+          <li>Spearheaded pre-production calls to align all stakeholders ahead of execution</li>
+          <li>Managed asset delivery, coordinating the transfer of all campaign materials from Uber Eats to the Roc Nation creative team</li>
+          <li>Oversaw the organization and uploading of all asset versions into their designated trackers, ensuring accuracy and accessibility across the team</li>
+        </ul>
+      </div>
 
       <!-- Popeyes -->
-      <h3>Popeyes</h3>
-      <p><em>Popeyes x Megan Thee Stallion Roc Nation | Franchise Opening — Miami, FL</em></p>
-      
-      <p>
-        Megan Thee Stallion formally opened her first-ever Popeyes restaurant in Miami with a special ribbon-cutting ceremony — the culmination of a partnership that began in 2021. Located in the heart of Miami Beach, the restaurant features Hottie-certified uniforms and a custom interior design curated in collaboration with Megan herself, complete with a bold mural, playful LED signage, and bespoke stallion tilework. The opening marked a landmark moment in Megan's evolution as an entrepreneur and business owner.
-      </p>
-      
-      <p><strong>My Role:</strong></p>
-      <ul>
-        <li>Served as the dedicated note-taker for all internal and external-facing Popeyes meetings, ensuring accurate documentation across every stage of the project</li>
-        <li>Led the vetting process for every Popeyes employee hired for the activation, maintaining the highest standards for the team representing Megan's brand</li>
-        <li>Managed the rerouting of Megan's custom-branded items — including her signature cups, bag, and uniform — through the proper approval channels to ensure everything met brand standards before the grand opening</li>
-      </ul>
-
-      <div class="project-divider"></div>
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DTgmBfUkbTF/?hl=en" target="_blank" style="text-decoration: none; color: inherit;">Popeyes</a></h3>
+        <div class="project-subtitle">Popeyes x Megan Thee Stallion Roc Nation | Franchise Opening — Miami, FL</div>
+        
+        <div class="project-description">
+          Megan Thee Stallion formally opened her first-ever Popeyes restaurant in Miami with a special ribbon-cutting ceremony — the culmination of a partnership that began in 2021. Located in the heart of Miami Beach, the restaurant features Hottie-certified uniforms and a custom interior design curated in collaboration with Megan herself, complete with a bold mural, playful LED signage, and bespoke stallion tilework. The opening marked a landmark moment in Megan's evolution as an entrepreneur and business owner.
+        </div>
+        
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Served as the dedicated note-taker for all internal and external-facing Popeyes meetings, ensuring accurate documentation across every stage of the project</li>
+          <li>Led the vetting process for every Popeyes employee hired for the activation, maintaining the highest standards for the team representing Megan's brand</li>
+          <li>Managed the rerouting of Megan's custom-branded items — including her signature cups, bag, and uniform — through the proper approval channels to ensure everything met brand standards before the grand opening</li>
+        </ul>
+      </div>
 
       <!-- Dunkin -->
-      <h3>Dunkin'</h3>
-      <p><em>Dunkin' x Megan Thee Stallion Roc Nation | Protein Drink Campaign</em></p>
-      
-      <p>
-        Megan Thee Stallion partnered with Dunkin' to introduce a new signature flavored protein drink as part of Dunkin's expanded protein latte and refresher lineup. The campaign featured Megan as the face of the launch, spanning commercial, social, press, and experiential elements.
-      </p>
-      
-      <p><strong>My Role:</strong></p>
-      <ul>
-        <li>Scheduled and coordinated production calls to align all stakeholders across campaign phases</li>
-        <li>Organized calls with Megan's glam team to ensure seamless preparation ahead of shoots</li>
-        <li>Managed the rerouting of approved assets for cutdowns and beauty notes, ensuring all materials met brand and talent standards before distribution</li>
-        <li>Maintained detailed asset trackers, logging and organizing every asset received throughout the campaign</li>
-        <li>Ensured timely payment for Megan Thee Stallion by coordinating directly between both finance teams</li>
-      </ul>
-
-      <div class="project-divider"></div>
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DTMkVcoDkNj/?hl=en" target="_blank" style="text-decoration: none; color: inherit;">Dunkin'</a></h3>
+        <div class="project-subtitle">Dunkin' x Megan Thee Stallion Roc Nation | Protein Drink Campaign</div>
+        
+        <div class="project-description">
+          Megan Thee Stallion partnered with Dunkin' to introduce a new signature flavored protein drink as part of Dunkin's expanded protein latte and refresher lineup. The campaign featured Megan as the face of the launch, spanning commercial, social, press, and experiential elements.
+        </div>
+        
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Scheduled and coordinated production calls to align all stakeholders across campaign phases</li>
+          <li>Organized calls with Megan's glam team to ensure seamless preparation ahead of shoots</li>
+          <li>Managed the rerouting of approved assets for cutdowns and beauty notes, ensuring all materials met brand and talent standards before distribution</li>
+          <li>Maintained detailed asset trackers, logging and organizing every asset received throughout the campaign</li>
+          <li>Ensured timely payment for Megan Thee Stallion by coordinating directly between both finance teams</li>
+        </ul>
+      </div>
 
       <!-- Hottieween -->
-      <h3>Hottieween</h3>
-      <p><em>Hottieween 2025 x Megan Thee Stallion Roc Nation | Annual Halloween Experience — Houston, TX</em></p>
-      
-      <p>
-        Hottieween is Megan Thee Stallion's annual Halloween party, with the 2025 edition themed around Texas Chainsaw Massacre and held at the Bayou Music Center in Downtown Houston. With all proceeds benefiting Megan's Pete & Thomas Foundation, which provides education, wellness, and housing support for women, children, seniors, and underserved communities, the event drew an estimated 2,500 attendees and featured brand activations from Kool-Aid, Maruchan, Monster, and Cava.
-      </p>
-      
-      <p><strong>My Role:</strong></p>
-      <ul>
-        <li>Was present on-site throughout the duration of Hottieween, overseeing each brand's station to ensure proper setup and execution across all activations</li>
-        <li>Served as the liaison between Roc Nation and brand partners — Kool-Aid, Maruchan, Monster, and Cava — managing communication, asset exchanges, and ensuring timely payments for each partnership</li>
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DQig3j_kbz2/?hl=en&img_index=13" target="_blank" style="text-decoration: none; color: inherit;">Hottieween</a></h3>
+        <div class="project-subtitle">Hottieween 2025 x Megan Thee Stallion Roc Nation | Annual Halloween Experience — Houston, TX</div>
+        
+        <div class="project-description">
+          Hottieween is Megan Thee Stallion's annual Halloween party, with the 2025 edition themed around Texas Chainsaw Massacre and held at the Bayou Music Center in Downtown Houston. With all proceeds benefiting Megan's Pete & Thomas Foundation, which provides education, wellness, and housing support for women, children, seniors, and underserved communities, the event drew an estimated 2,500 attendees and featured brand activations from Kool-Aid, Maruchan, Monster, and Cava.
+        </div>
+        
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Was present on-site throughout the duration of Hottieween, overseeing each brand's station to ensure proper setup and execution across all activations</li>
+          <li>Served as the liaison between Roc Nation and brand partners — Kool-Aid, Maruchan, Monster, and Cava — managing communication, asset exchanges, and ensuring timely payments for each partnership</li>
           <li>Led the vetting process for all influencers in attendance, ensuring alignment with brand and talent standards</li>
           <li>Spearheaded the Cava activation on-site, ensuring proper placement of 2,000 chips and confirming all social assets were completed and delivered</li>
           <li>Conducted a venue tour to assess the space and confirm all activations were set up and event-ready ahead of doors opening</li>
-        <li>Coordinated directly with venue staff and Roc Nation's security team to establish comprehensive logistics plans, including load-in schedules, floor layouts, and security protocols for managing the large crowd and ensuring a seamless experience for all attendees</li>
-      </ul>
+          <li>Coordinated directly with venue staff and Roc Nation's security team to establish comprehensive logistics plans, including load-in schedules, floor layouts, and security protocols for managing the large crowd and ensuring a seamless experience for all attendees</li>
+        </ul>
+      </div>
+    </div>
 
   </section>
   <div class="footer">

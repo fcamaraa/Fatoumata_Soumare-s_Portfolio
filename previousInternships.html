@@ -2,9 +2,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Previous Internships</title>
+  <title>Previous Internships - Fatoumata Soumare</title>
   <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <style>
+    body {
+      background-color: #fdf9f3;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      line-height: 1.8;
+    }
+
+    .title h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #2b2b2b;
+      font-weight: 200;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #f2789f, #e6689a);
+      border-radius: 2px;
+    }
+
+    .internships-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .internship-card {
+      background: linear-gradient(145deg, #f8f5f0 0%, #f0ebe5 100%);
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: 
+        0 15px 45px rgba(0,0,0,0.1),
+        0 5px 15px rgba(242, 120, 159, 0.1);
+      border-left: 5px solid #f2789f;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .internship-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(242, 120, 159, 0.03) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .internship-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 
+        0 30px 80px rgba(0,0,0,0.15),
+        0 10px 30px rgba(242, 120, 159, 0.2);
+    }
+
+    .company-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .internship-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin: 0 auto 12px auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 6px;
+    }
+
+    .company-info {
+      flex: 1;
+    }
+
+    .internship-card strong {
+      color: #2b2b2b;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-align: center;
+    }
+
+    .internship-card em {
+      color: #f2789f;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 5px;
+      font-style: normal;
+      text-shadow: 0 1px 2px rgba(242, 120, 159, 0.2);
+      text-align: center;
+    }
+
+    .internship-card span {
+      color: #666;
+      font-size: 0.85rem;
+      font-style: italic;
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .internship-description {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.5;
+      text-align: justify;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(242, 120, 159, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .internships-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .internships-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .internship-card {
+        padding: 20px 18px;
+        border-radius: 16px;
+      }
+
+      .internship-card img {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .title h2 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+      
+      section {
+        padding: 40px 15px;
+      }
+      
+      .internship-card strong {
+        font-size: 1.05rem;
+      }
+      
+      .internship-card em {
+        font-size: 0.9rem;
+      }
+
+      .internship-description {
+        text-align: left;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .internship-card {
+        padding: 18px 15px;
+      }
+
+      .internships-container {
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -17,56 +222,71 @@
   </nav>
   <section>
     <div class="title">
-    <h2>Previous Internships</h2>
-    <br><br>
+      <h2>Previous Internships</h2>
     </div>
     <div class="internships-container">
       <!-- Momentum Worldwide -->
       <div class="internship-card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpXA-rz5diUZPAUHvrXK4e3BMe_IxAmtz4nw&s" width="100" alt="Momentum Worldwide Logo">
-        <p>
-          <strong>Momentum Worldwide</strong><br>
-          <em>Digital Strategy Intern</em><br>
-          <span>May 2024 - August 2024</span><br>
+        <div class="company-header">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpXA-rz5diUZPAUHvrXK4e3BMe_IxAmtz4nw&s" alt="Momentum Worldwide Logo">
+          <div class="company-info">
+            <strong>Momentum Worldwide</strong>
+            <em>Digital Strategy Intern</em>
+            <span>May 2024 - August 2024</span>
+          </div>
+        </div>
+        <div class="internship-description">
           As a Digital Strategy Intern at Momentum, I developed a comprehensive digital communications plan for Chevron's 'Win for Kids' campaign. I conducted social listening for American Express clients to devise effective marketing strategies for their business cards targeting C-suite executives. Additionally, I performed a competitive audit for Momentum and its competitors to identify unique opportunities for differentiation. Lastly, I crafted a communications plan for two activations for Intrepid Travel, aiming to enhance their marketing efforts towards Gen Z.
-        </p>
+        </div>
       </div>
       <!-- Adidas -->
       <div class="internship-card">
-        <img src="https://brandlogos.net/wp-content/uploads/2020/03/Adidas-logo-300x300.png" width="100" alt="Adidas Logo">
-        <p>
-          <strong>Adidas</strong><br>
-          <em>Digital Growth and Elevated Music Partnerships Intern</em><br>
-          <span>June 2023 - August 2023</span><br>
+        <div class="company-header">
+          <img src="https://brandlogos.net/wp-content/uploads/2020/03/Adidas-logo-300x300.png" alt="Adidas Logo">
+          <div class="company-info">
+            <strong>Adidas</strong>
+            <em>Digital Growth and Elevated Music Partnerships Intern</em>
+            <span>June 2023 - August 2023</span>
+          </div>
+        </div>
+        <div class="internship-description">
           As a digital growth intern, I conducted 20+ stakeholder interviews and synthesized findings, processes, and best practices to be shared with cross-functional marketing, communications, and technology teams. I created a digital strategy and playbook to enhance structural support for collaborations and partnerships with top digital creators. In the end, I presented fundamental insights to the digital growth team with the aim of enhancing the efficiency of orchestrating premier-creator led events.
-        </p>
+        </div>
       </div>
       <!-- Capital One -->
       <div class="internship-card">
-        <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/product-categories/contact-center/approved/images/dd84d7f8-4ff7-49ab-83c0-e051efaf87a2.0aef0b700254d3f618484ff03747100753de3d64.png" width="100" alt="Capital One Logo">
-        <p>
-          <strong>Capital One</strong><br>
-          <em>Business Analysis Intern</em><br>
-          <span>June 2022 - August 2022</span><br>
+        <div class="company-header">
+          <img src="https://d1.awsstatic.com/onedam/marketing-channels/website/aws/en_US/product-categories/contact-center/approved/images/dd84d7f8-4ff7-49ab-83c0-e051efaf87a2.0aef0b700254d3f618484ff03747100753de3d64.png" alt="Capital One Logo">
+          <div class="company-info">
+            <strong>Capital One</strong>
+            <em>Business Analysis Intern</em>
+            <span>June 2022 - August 2022</span>
+          </div>
+        </div>
+        <div class="internship-description">
           As a Capital One intern, I utilized the coding language, SNL, to research performance on over 1 million referrals made by customers. I conducted analysis of repeated trends and behavior, of customers specifically in the email channel. Finally, I consulted with the referrals team to better inform marketing decisions in the referrals channels.
-        </p>
+        </div>
       </div>
       <!-- The Sadie Collective -->
       <div class="internship-card">
-        <img src="https://static.wixstatic.com/media/cd1b50_dc8aae7e24704b4a84d2dc359c15ea91~mv2.png/v1/fit/w_2500,h_1330,al_c/cd1b50_dc8aae7e24704b4a84d2dc359c15ea91~mv2.png" width="100" alt="The Sadie Collective Logo">
-        <p>
-          <strong>The Sadie Collective</strong><br>
-          <em>Diversity, Equity, and Inclusion Intern</em><br>
-          <span>July 2022 - August 2022</span><br>
+        <div class="company-header">
+          <img src="https://static.wixstatic.com/media/cd1b50_dc8aae7e24704b4a84d2dc359c15ea91~mv2.png/v1/fit/w_2500,h_1330,al_c/cd1b50_dc8aae7e24704b4a84d2dc359c15ea91~mv2.png" alt="The Sadie Collective Logo">
+          <div class="company-info">
+            <strong>The Sadie Collective</strong>
+            <em>Diversity, Equity, and Inclusion Intern</em>
+            <span>July 2022 - August 2022</span>
+          </div>
+        </div>
+        <div class="internship-description">
           As the DEI Index Intern at the Sadie Collective, I compiled data on racial and gender demographics of faculty and board members at the Top 20 graduate economics departments in the country, and then used that data to finalize a white paper that not only summarized my findings, but also suggested ways to improve the gap between white faculty and faculty of color.
-        </p>
+        </div>
       </div>
     </div>
   </section>
   <div class="footer">
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.linkedin.com/in/fatoumata-s/"><i class="fab fa-linkedin"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fas fa-envelope"></i></a>
+    <a href="mailto:fatoumatasoumare1@gmail.com"><i class="fas fa-envelope"></i></a>
   </div>
 </body>
 </html>

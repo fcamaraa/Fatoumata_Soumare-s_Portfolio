@@ -1,0 +1,273 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Tat - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <style>
+    body {
+      background-color: #fdf9f3;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      line-height: 1.8;
+    }
+
+    .title h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #2b2b2b;
+      font-weight: 200;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #f2789f, #e6689a);
+      border-radius: 2px;
+    }
+
+    .about-container {
+      background: linear-gradient(145deg, #f8f5f0 0%, #f0ebe5 100%);
+      border-radius: 20px;
+      padding: 35px 30px;
+      box-shadow: 
+        0 15px 45px rgba(0,0,0,0.1),
+        0 5px 15px rgba(242, 120, 159, 0.1);
+      border-left: 5px solid #f2789f;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(242, 120, 159, 0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .profile-image {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 30px auto;
+      display: block;
+      box-shadow: 
+        0 15px 30px rgba(0,0,0,0.15),
+        0 8px 15px rgba(242, 120, 159, 0.2);
+      border: 5px solid #fff;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-image:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 
+        0 30px 60px rgba(0,0,0,0.2),
+        0 15px 30px rgba(242, 120, 159, 0.3);
+    }
+
+    .typewriter-container {
+      max-width: 550px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .typewriter-text {
+      font-size: 1.1rem;
+      color: #2b2b2b;
+      line-height: 1.7;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    #typewriter {
+      border-right: 3px solid #f2789f;
+      padding-right: 8px;
+      animation: blink-caret 1.2s infinite;
+    }
+
+    .highlight {
+      color: #f2789f;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(242, 120, 159, 0.2);
+    }
+
+    @keyframes blink-caret {
+      from, to { 
+        border-color: transparent; 
+        box-shadow: 0 0 0 rgba(242, 120, 159, 0);
+      }
+      50% { 
+        border-color: #f2789f;
+        box-shadow: 0 0 8px rgba(242, 120, 159, 0.5);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about-container {
+        padding: 40px 25px;
+        border-radius: 20px;
+      }
+      
+      .profile-image {
+        width: 250px;
+        height: 250px;
+      }
+      
+      .title h2 {
+        font-size: 2.2rem;
+        letter-spacing: 1px;
+      }
+      
+      .typewriter-text {
+        font-size: 1.1rem;
+      }
+      
+      section {
+        padding: 40px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-image {
+        width: 220px;
+        height: 220px;
+      }
+      
+      .title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .about-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="education.html">Education</a>
+    <a href="previousInternships.html">Previous Internships</a>
+    <a href="nyliberty.html">NY Liberty</a>
+    <a href="jolieden.html">Jolie Den</a>
+    <a href="now.html">Now</a>
+  </nav>
+  
+  <section>
+    <div class="title">
+      <h2>About Me</h2>
+    </div>
+    
+    <div class="about-container">
+      <img 
+        src="https://i.ibb.co/wNmVC171/CFB10636-34-F3-411-C-8-D24-5682-B5751-E26.jpg" 
+        alt="Fatoumata Soumare" 
+        class="profile-image"
+      >
+      
+      <div class="typewriter-container">
+        <div class="typewriter-text">
+          <div id="typewriter">
+            <span class="highlight">Fatoumata</span> is a cultural strategist passionate about media, entertainment, and the power of storytelling. With a background in sports and a sharp business mindset, she bridges creativity and strategy to amplify diverse voices in global pop culture. Early in her career, she's focused on helping artists, brands, and platforms expand their reach and tell impactful stories through social media, content strategy, and event management.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <a href="https://www.linkedin.com/in/fatoumata-s/"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:fatoumatasoumare1@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <script>
+    // Typewriter effect
+    function initTypewriter() {
+      const typewriterElement = document.getElementById('typewriter');
+      if (!typewriterElement) return;
+      
+      const originalText = typewriterElement.innerHTML;
+      typewriterElement.innerHTML = '';
+      
+      let index = 0;
+      const tempElement = document.createElement('div');
+      tempElement.innerHTML = originalText;
+      const textContent = tempElement.textContent || tempElement.innerText || '';
+      
+      function typeWriter() {
+        if (index < textContent.length) {
+          const currentChar = textContent.charAt(index);
+          
+          if (index === 0) {
+            // Add the highlight span for "Fatoumata"
+            typewriterElement.innerHTML = '<span class="highlight">F</span>';
+          } else if (index < 9) {
+            // Continue building "Fatoumata" with highlight
+            const highlighted = textContent.substring(0, 9);
+            const rest = textContent.substring(9, index + 1);
+            typewriterElement.innerHTML = `<span class="highlight">${highlighted}</span>${rest}`;
+          } else {
+            // Add regular text
+            typewriterElement.textContent = textContent.substring(0, index + 1);
+            // Re-add the highlight for "Fatoumata"
+            const content = typewriterElement.textContent;
+            typewriterElement.innerHTML = content.replace('Fatoumata', '<span class="highlight">Fatoumata</span>');
+          }
+          
+          index++;
+          
+          // Variable speed - slower for punctuation
+          let speed = 50;
+          
+          if (currentChar === '.' || currentChar === ',' || currentChar === '!') {
+            speed = 300;
+          } else if (currentChar === ' ') {
+            speed = 30;
+          }
+          
+          setTimeout(typeWriter, speed);
+        } else {
+          // Animation finished, remove caret after a delay
+          setTimeout(() => {
+            typewriterElement.style.borderRight = 'none';
+          }, 1000);
+        }
+      }
+      
+      // Start typing
+      typeWriter();
+    }
+    
+    // Start typing effect after page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(initTypewriter, 800);
+    });
+  </script>
+</body>
+</html>
