@@ -1,0 +1,46 @@
+.starfield {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.star:nth-child(odd) {
+  animation-duration: 1.8s;
+}
+
+.star:nth-child(3n) {
+  animation-duration: 3.2s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.star:nth-child(1) { top: 5%; left: 10%; }
+.star:nth-child(2) { top: 12%; left: 30%; }
+.star:nth-child(3) { top: 20%; left: 80%; }
+.star:nth-child(4) { top: 25%; left: 55%; }
+.star:nth-child(5) { top: 32%; left: 15%; }
+.star:nth-child(6) { top: 40%; left: 72%; }
+.star:nth-child(7) { top: 48%; left: 45%; }
+.star:nth-child(8) { top: 52%; left: 88%; }
+.star:nth-child(9) { top: 60%; left: 22%; }
+.star:nth-child(10) { top: 68%; left: 65%; }

@@ -1,0 +1,24 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.welcome-message {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.welcome-message h1 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
