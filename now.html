@@ -17,10 +17,38 @@
       min-height: 100vh;
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 14px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(250, 250, 250, 0.94);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #ededed;
+    }
+
+    nav a {
+      margin: 0.25rem 0.6rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f2789f;
+    }
+
     section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 30px;
+      padding: 32px 30px 40px;
       line-height: 1.7;
     }
 
@@ -30,12 +58,6 @@
       gap: 30px;
       margin-top: 40px;
       justify-content: center;
-    }
-
-    .projects-grid .project-container:nth-child(5) {
-      grid-column: 1 / -1;
-      justify-self: center;
-      max-width: 600px;
     }
 
     .role-intro {
@@ -199,6 +221,47 @@
       margin-bottom: 0;
     }
 
+    .project-links {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid #ececec;
+    }
+
+    .project-links-title {
+      color: #f2789f;
+      font-size: 1rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project-links-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-links-list a {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #fff4f7;
+      border: 1px solid #f6c8d6;
+      color: #b94d72;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-links-list a:hover {
+      background: #f2789f;
+      border-color: #f2789f;
+      color: #fff;
+    }
+
     .project-divider {
       width: 60px;
       height: 2px;
@@ -206,8 +269,38 @@
       margin: 40px auto;
     }
 
+    .footer {
+      width: 100%;
+      padding: 1.5rem 0;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: auto;
+    }
+
+    .footer a {
+      color: #ea5f89;
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #000;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
+      nav {
+        padding: 12px 10px;
+      }
+
+      nav a {
+        margin: 0.25rem 0.45rem;
+        font-size: 0.95rem;
+      }
+
       section {
         padding: 30px 20px;
       }
@@ -386,6 +479,154 @@
           <li>Conducted a venue tour to assess the space and confirm all activations were set up and event-ready ahead of doors opening</li>
           <li>Coordinated directly with venue staff and Roc Nation's security team to establish comprehensive logistics plans, including load-in schedules, floor layouts, and security protocols for managing the large crowd and ensuring a seamless experience for all attendees</li>
         </ul>
+      </div>
+
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DVwATCjFPUG/?hl=en&img_index=2" target="_blank" style="text-decoration: none; color: inherit;">True Religion</a></h3>
+        <div class="project-subtitle">True Religion x Megan Thee Stallion | Spring 2026 Campaign</div>
+
+        <div class="project-description">
+          True Religion Brand Jeans partnered with Megan Thee Stallion as headline talent for their Spring 2026 "True Self" campaign, a cinematic studio-based editorial spanning three creative chapters: True Self, True Purpose, and True Legacy. The campaign included a photography and video shoot, required social posts across Instagram and TikTok, two dressing events, and media interviews.
+        </div>
+
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Served as the primary point of contact for all post-production approvals, managing the asset review and feedback pipeline between Megan Thee Stallion's creative team and True Religion's digital and social leads</li>
+          <li>Facilitated talent payment coordination, ensuring Megan Thee Stallion's team received disbursements per contract milestones</li>
+          <li>Facilitated the approval of all digital and social assets associated with the campaign, ensuring content met both brand standards and contractual requirements before going live</li>
+          <li>Led recurring syncs with True Religion's digital and social media teams to track asset delivery timelines and campaign launch deadlines</li>
+          <li>Liaised between Megan Thee Stallion's creative team and True Religion's digital lead to secure timely feedback, keeping approval cycles on schedule</li>
+          <li>Coordinated True Religion's donation of 200 pieces of branded apparel to Megan Thee Stallion's Pete and Thomas Foundation as part of the partnership's charitable commitment</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-links-title">Links</span>
+          <div class="project-links-list">
+            <a href="https://www.instagram.com/p/DVwATCjFPUG/?hl=en&img_index=2" target="_blank">True Religion Teaser</a>
+            <a href="https://www.instagram.com/p/DWhAEWuknC4/?hl=en" target="_blank">True Religion Volume 1 Post 1</a>
+            <a href="https://www.instagram.com/p/DVzH-3rkuWD/?hl=en&img_index=1" target="_blank">True Religion Volume 1 Post 2</a>
+            <a href="https://www.instagram.com/p/DWhAEWuknC4/?hl=en" target="_blank">True Religion Volume 2 Post 1</a>
+            <a href="https://www.instagram.com/p/DXCZec1kvsM/?hl=en" target="_blank">Pete and Thomas Video</a>
+            <a href="https://www.instagram.com/p/DXagQgiEeWF/?hl=en&img_index=1" target="_blank">True Religion Volume 3 Post 1</a>
+            <a href="https://www.instagram.com/p/DXe2Teukt5H/?hl=en" target="_blank">True Religion Volume 3 Post 2</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DXZc_vVEsWn/?hl=en" target="_blank" style="text-decoration: none; color: inherit;">NYX Professional Makeup</a></h3>
+        <div class="project-subtitle">NYX Professional Makeup x Megan Thee Stallion | Caramelt Mami Body Oil Campaign</div>
+
+        <div class="project-description">
+          NYX Professional Makeup, a consumer division of L'Oréal USA, partnered with Megan Thee Stallion for the launch of their Caramelt Mami Body Oil, a campaign spanning a production day shoot in Los Angeles, a personal appearance at Miami Swim Week, press interviews, and social media deliverables across Instagram and TikTok.
+        </div>
+
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Coordinated pre-production calls between Megan Thee Stallion's creative, digital, and artist management teams to align on campaign direction ahead of the production day shoot</li>
+          <li>Managed timely delivery of campaign assets to NYX's internal teams, ensuring content was available within contractual review windows</li>
+          <li>Led the approval process for OOH assets as part of the internal campaign rollout</li>
+          <li>Vetted influencers selected to participate in the broader campaign, assessing fit with brand standards and contractual requirements</li>
+          <li>Led the influencer approval process for the Miami Swim Week activation, ensuring all talent aligned with campaign creative and compliance guidelines</li>
+          <li>Tracked campaign finances and liaised between NYX and Megan Thee Stallion's team to ensure talent payment was processed accurately and on schedule per contract milestones</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-links-title">Links</span>
+          <div class="project-links-list">
+            <a href="https://www.instagram.com/p/DXZc_vVEsWn/?hl=en" target="_blank">NYX x MTS Collab Post</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DXHONmgESyH/?hl=en" target="_blank" style="text-decoration: none; color: inherit;">Walmart</a></h3>
+        <div class="project-subtitle">Walmart x Megan Thee Stallion | Hot Girl Universe Campaign</div>
+
+        <div class="project-description">
+          Walmart partnered with Megan Thee Stallion for the "Hot Girl Universe" campaign, promoting her Hot Girl Swim and Hot Dog Summer product lines available exclusively through Walmart. The campaign included an on-camera production day at Synapse Virtual Stage in Los Angeles, a personal in-store appearance, media interviews, and social media deliverables across Instagram and TikTok.
+        </div>
+
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Served as the point of contact between Megan Thee Stallion's team and Walmart, coordinating pre-production calls across her creative, digital, and artist management teams ahead of the on-camera service day</li>
+          <li>Managed timely delivery of campaign assets, ensuring content was submitted and approved within contractual review windows</li>
+          <li>Facilitated the approval of all digital and social assets associated with the campaign, ensuring content met both Walmart's brand standards and FTC compliance requirements before going live</li>
+          <li>Tracked the approval process for Megan Thee Stallion's Hot Girl Swim swimsuit line, managing feedback loops between her team and Walmart on product presentation and campaign creative</li>
+          <li>Vetted and approved models, influencers, videographers, and directors participating in the campaign, ensuring all talent and crew aligned with creative direction and brand standards</li>
+          <li>Tracked campaign finances and liaised between Walmart and Megan Thee Stallion's team to ensure talent payment was processed accurately and on schedule per contract milestones</li>
+          <li>Coordinated recurring syncs with Walmart's marketing and social teams to keep campaign execution on track across all deliverables</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-links-title">Links</span>
+          <div class="project-links-list">
+            <a href="https://www.instagram.com/p/DXHONmgESyH/?hl=en" target="_blank">Collab Post</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DWWTy2WjgWw/?hl=en" target="_blank" style="text-decoration: none; color: inherit;">Frito-Lay</a></h3>
+        <div class="project-subtitle">Frito-Lay x Megan Thee Stallion | Cheetos Flamin' Hot Dill Pickle Campaign</div>
+
+        <div class="project-description">
+          Frito-Lay North America partnered with Megan Thee Stallion as the headline talent for the launch of Cheetos Flamin' Hot Dill Pickle, a campaign spanning a production shoot, social media deliverables across Instagram and TikTok, press interviews, and a co-branded "Flamin' Hotties" creative concept merging Megan's HOTTIE trademark with Cheetos' FLAMIN' HOT brand identity.
+        </div>
+
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Served as the primary point of contact between Megan Thee Stallion's team and Frito-Lay, coordinating pre-production calls across her creative, digital, and artist management teams ahead of the campaign shoot</li>
+          <li>Managed timely delivery of campaign assets, ensuring content was submitted and approved within contractual review windows</li>
+          <li>Facilitated the approval of all digital, social, OOH, and billboard assets associated with the campaign, ensuring content met Frito-Lay's brand standards and FTC compliance requirements before going live</li>
+          <li>Vetted and approved models, influencers, videographers, and directors participating in the campaign, ensuring all talent and crew aligned with creative direction and brand standards</li>
+          <li>Vetted all contest winners selected for Megan Thee Stallion's Finger Chips promotion, ensuring eligibility and compliance with campaign guidelines</li>
+          <li>Tracked and consolidated retouching feedback from Megan Thee Stallion's creative and digital teams, streamlining the revision process to enable video retouchers to apply notes efficiently and accurately</li>
+          <li>Tracked and reconciled all campaign-related payments including talent fees, travel and glam buyouts, music licensing fees, and SAG-AFTRA track fees, ensuring Megan Thee Stallion's team received accurate and timely disbursements across all payment milestones</li>
+          <li>Tracked the proceeds of Megan Thee Stallion's auction, ensuring all donations were delivered in full to the Pete and Thomas Foundation</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-links-title">Links</span>
+          <div class="project-links-list">
+            <a href="https://www.instagram.com/p/DWWTy2WjgWw/?hl=en" target="_blank">Collab Post</a>
+            <a href="https://www.instagram.com/p/DXZoBLQEoS-/?hl=en" target="_blank">Megan Thee Stallion Cheetos Bag</a>
+            <a href="https://www.instagram.com/p/DWpaNZ_krek/?hl=en" target="_blank">Cheetos Auction</a>
+            <a href="https://www.instagram.com/p/DW6dGoYD-Y5/?hl=en" target="_blank">Additional IG Post</a>
+            <a href="https://www.instagram.com/p/DWzdGzlEvQS/?hl=en" target="_blank">Post 1</a>
+            <a href="https://www.instagram.com/p/DW11Oo5klBp/?hl=en" target="_blank">Post 2</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/DWo3b4Zj1MA/" target="_blank" style="text-decoration: none; color: inherit;">Ayra Starr x Yale</a></h3>
+        <div class="project-subtitle">Ayra Starr x Yale African Innovations Symposium</div>
+
+        <div class="project-description">
+          Afrobeats artist Ayra Starr was invited to speak at the Yale African Innovations Symposium, joining a gathering of innovators, creatives, and thought leaders at one of the world's leading academic institutions. The appearance marked a meaningful intersection of African artistry and intellectual discourse on the global stage.
+        </div>
+
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Identified and brought the Yale African Innovations Symposium opportunity to Ayra Starr and her team, facilitating the partnership from initial outreach through execution</li>
+          <li>Served as the primary liaison between the Yale organizing team and Ayra Starr's team, managing all logistics including hotel accommodations and ground transportation</li>
+          <li>Developed a comprehensive run of show for the day, ensuring all scheduling, key contacts, and programming details were clearly mapped out ahead of the appearance</li>
+          <li>Created a social media content list to guide content capture throughout the day, aligning on key moments and deliverables ahead of the event</li>
+          <li>Collaborated with the digital team on-site to oversee content capture, ensuring all planned moments were documented</li>
+          <li>Worked with the team in post to produce a recap video highlighting Ayra Starr's appearance and the broader symposium experience</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-links-title">Links</span>
+          <div class="project-links-list">
+            <a href="https://www.instagram.com/p/DWo3b4Zj1MA/" target="_blank">Announcement</a>
+            <a href="https://www.instagram.com/reels/DYDRlWcJT5j/" target="_blank">Recap</a>
+            <a href="https://substack.com/home/post/p-196818950" target="_blank">Substack Article</a>
+            <a href="https://www.instagram.com/p/DYICUc0DND9/" target="_blank">Press (Rolling Stone Africa)</a>
+            <a href="https://www.instagram.com/p/DYH60csjVpW/?img_index=1" target="_blank">Press (Native Mag)</a>
+          </div>
+        </div>
       </div>
     </div>
 
