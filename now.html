@@ -58,6 +58,7 @@
       gap: 30px;
       margin-top: 40px;
       justify-content: center;
+      align-items: start;
     }
 
     .role-intro {
@@ -135,11 +136,11 @@
       box-shadow: 0 2px 15px rgba(0,0,0,0.08);
       border: 1px solid #e8dfd4;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: fit-content;
+      display: flex;
+      flex-direction: column;
     }
 
     .project-container:hover {
-      transform: translateY(-5px);
       box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     }
 
@@ -159,6 +160,21 @@
       color: #f2789f !important;
     }
 
+    .newest-tag {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #e8d8c6;
+      background: rgba(242, 120, 159, 0.08);
+      color: #b06783;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
     .project-subtitle {
       color: #666;
       font-style: italic;
@@ -176,9 +192,45 @@
     .project-description {
       font-size: 1rem;
       color: #555;
-      margin-bottom: 25px;
+      margin-bottom: 16px;
       line-height: 1.6;
       font-weight: 400;
+    }
+
+    .project-description.clamped {
+      max-height: 5.2em;
+      overflow: hidden;
+    }
+
+    .project-description.expanded {
+      max-height: none;
+      overflow: visible;
+    }
+
+    ul.role-list-clamped {
+      max-height: 12.8em;
+      overflow: hidden;
+    }
+
+    .card-toggle-btn {
+      align-self: flex-start;
+      margin-top: 14px;
+      margin-bottom: 22px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #e8d8c6;
+      background: #f8f5f0;
+      color: #b06783;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card-toggle-btn:hover {
+      background: #f2789f;
+      border-color: #f2789f;
+      color: #fff;
     }
 
     .role-header {
@@ -196,6 +248,7 @@
       padding: 20px 25px;
       border-radius: 8px;
       border-left: 4px solid #f2789f;
+      list-style: none;
       margin-bottom: 0;
     }
 
@@ -225,6 +278,7 @@
       margin-top: 22px;
       padding-top: 18px;
       border-top: 1px solid #e8dfd4;
+      margin-top: auto;
     }
 
     .project-links-title {
@@ -260,6 +314,106 @@
       background: #f2789f;
       border-color: #f2789f;
       color: #fff;
+    }
+
+    .project-media {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .project-container.card-expanded .project-media {
+      display: block;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #e8dfd4;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      display: block;
+      cursor: pointer;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(18, 12, 14, 0.82);
+      z-index: 2000;
+      padding: 24px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-image {
+      max-width: min(92vw, 1100px);
+      max-height: 82vh;
+      border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      object-fit: contain;
+      background: #111;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    .lightbox-prev {
+      left: 24px;
+    }
+
+    .lightbox-next {
+      right: 24px;
+    }
+
+    .lightbox-close {
+      top: 18px;
+      right: 18px;
+      font-size: 1rem;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 0.92rem;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 6px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
     }
 
     .project-divider {
@@ -389,6 +543,53 @@
 
     <!-- Projects Grid -->
     <div class="projects-grid">
+      <div class="project-container">
+        <h3><a href="https://www.instagram.com/p/Daaewjlxs07/" target="_blank" style="text-decoration: none; color: inherit;">Coty</a><span class="newest-tag">Newest</span></h3>
+        <div class="project-subtitle">Coty x Megan Thee Stallion | Fragrance Partnership</div>
+
+        <div class="project-description">
+          Coty Inc. partnered with Megan Thee Stallion (via Hot Girl Branding, LLC) on an exclusive fragrance license, developing a new Fragrance Licensed Product line launching across the US, Canada, DACH, UK/Ireland, Spain, and Portugal. The partnership spans product development, a major advertising production, retail personal appearances, media interviews, and a coordinated social media rollout across Instagram and TikTok.
+        </div>
+
+        <span class="role-header">My Role:</span>
+        <ul>
+          <li>Served as the primary point of contact for post-production asset approvals, managing the review and feedback pipeline between Megan Thee Stallion's creative team and Coty's marketing and digital leads</li>
+          <li>Led creative approvals for the retail personal appearance and launch event, including concept, format, and on-site experience sign-off</li>
+          <li>Conducted in-person walkthroughs to oversee event execution and ensure alignment with approved creative</li>
+          <li>Liaised with Megan Thee Stallion's social media team to ensure all social assets were approved and published in line with the agreed content calendar</li>
+          <li>Served as liaison for payment coordination between Coty and Megan Thee Stallion's team, tracking disbursements against contract milestones</li>
+        </ul>
+
+        <div class="project-links">
+          <span class="project-links-title">Links</span>
+          <div class="project-links-list">
+            <a href="https://www.instagram.com/p/Daaewjlxs07/" target="_blank">Launch Video</a>
+            <a href="https://www.instagram.com/p/Da0g3TKx59n/" target="_blank">Ulta Appearance</a>
+            <a href="https://www.instagram.com/p/Da3pVlnRGNJ/" target="_blank">Launch Party</a>
+          </div>
+        </div>
+
+        <div class="project-media">
+          <span class="project-links-title">Event Gallery</span>
+          <div class="project-gallery">
+            <img src="https://i.ibb.co/39Q1yNqW/MTS-COTY-PARTY68.jpg" alt="MTS COTY PARTY68">
+            <img src="https://i.ibb.co/N26v587q/MTS-COTY-PARTY75.jpg" alt="MTS COTY PARTY75">
+            <img src="https://i.ibb.co/r1Qk7HR/MTS-COTY-PARTY81.jpg" alt="MTS COTY PARTY81">
+            <img src="https://i.ibb.co/0VF9zvhX/MTS-COTY-PARTY85.jpg" alt="MTS COTY PARTY85">
+            <img src="https://i.ibb.co/gFDNWnkR/MTS-COTY-PARTY91.jpg" alt="MTS COTY PARTY91">
+            <img src="https://i.ibb.co/4RM0gYfd/MTS-COTY-PARTY99.jpg" alt="MTS COTY PARTY99">
+            <img src="https://i.ibb.co/fYGfcBcv/MTS-COTY-PARTY101.jpg" alt="MTS COTY PARTY101">
+            <img src="https://i.ibb.co/7JGWrc0L/MTS-COTY-PARTY102.jpg" alt="MTS COTY PARTY102">
+            <img src="https://i.ibb.co/gL9f8ycT/MTS-COTY-PARTY110.jpg" alt="MTS COTY PARTY110">
+            <img src="https://i.ibb.co/Df4QCnrh/MTS-COTY-PARTY112-1.jpg" alt="MTS COTY PARTY112 (1)">
+            <img src="https://i.ibb.co/dsRtPKDL/MTS-COTY-PARTY117.jpg" alt="MTS COTY PARTY117">
+            <img src="https://i.ibb.co/ycWrW8Tn/MTS-COTY-PARTY127.jpg" alt="MTS COTY PARTY127">
+            <img src="https://i.ibb.co/8ngL8mcY/MTS-COTY-PARTY137.jpg" alt="MTS COTY PARTY137">
+            <img src="https://i.ibb.co/q3Rk9Svq/MTS-COTY-PARTY138.jpg" alt="MTS COTY PARTY138">
+          </div>
+        </div>
+      </div>
+
       <!-- Kodansha House -->
       <div class="project-container">
         <h3><a href="https://www.instagram.com/reels/DPpB-DAEltp/" target="_blank" style="text-decoration: none; color: inherit;">Kodansha House</a></h3>
@@ -636,5 +837,162 @@
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="mailto:fatoumatasoumare1@gmail.com"><i class="fas fa-envelope"></i></a>
   </div>
+
+  <div class="lightbox" id="gallery-lightbox" aria-hidden="true">
+    <button type="button" class="lightbox-btn lightbox-close" aria-label="Close gallery">✕</button>
+    <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous image">❮</button>
+    <img class="lightbox-image" src="" alt="Expanded event image">
+    <button type="button" class="lightbox-btn lightbox-next" aria-label="Next image">❯</button>
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script>
+    function initGalleryLightbox() {
+      const lightbox = document.getElementById('gallery-lightbox');
+      const lightboxImage = lightbox.querySelector('.lightbox-image');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const prevBtn = lightbox.querySelector('.lightbox-prev');
+      const nextBtn = lightbox.querySelector('.lightbox-next');
+      const caption = lightbox.querySelector('.lightbox-caption');
+      const galleryImages = Array.from(document.querySelectorAll('.project-gallery img'));
+
+      if (!galleryImages.length) return;
+
+      let currentIndex = 0;
+
+      function renderImage() {
+        const image = galleryImages[currentIndex];
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt || 'Event image';
+        caption.textContent = (image.alt || 'Event image') + ' (' + (currentIndex + 1) + ' of ' + galleryImages.length + ')';
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        renderImage();
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        renderImage();
+      }
+
+      function showPrevious() {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        renderImage();
+      }
+
+      galleryImages.forEach(function (image, index) {
+        image.addEventListener('click', function () {
+          openLightbox(index);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      nextBtn.addEventListener('click', showNext);
+      prevBtn.addEventListener('click', showPrevious);
+
+      lightbox.addEventListener('click', function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (!lightbox.classList.contains('open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') showNext();
+        if (event.key === 'ArrowLeft') showPrevious();
+      });
+    }
+
+    function equalizeCardHeights() {
+      const cards = Array.from(document.querySelectorAll('.project-container'));
+      if (!cards.length) return;
+
+      const hasExpandedCard = cards.some(function (card) {
+        return card.classList.contains('card-expanded');
+      });
+
+      cards.forEach(function (card) {
+        card.style.height = '';
+      });
+
+      if (hasExpandedCard) return;
+
+      let tallest = 0;
+      cards.forEach(function (card) {
+        const height = card.offsetHeight;
+        if (height > tallest) tallest = height;
+      });
+
+      cards.forEach(function (card) {
+        card.style.height = tallest + 'px';
+      });
+    }
+
+    function initReadMore() {
+      const cards = document.querySelectorAll('.project-container');
+      const descriptionThreshold = 260;
+      const roleItemThreshold = 4;
+
+      cards.forEach(function (card) {
+        const description = card.querySelector('.project-description');
+        const roleList = card.querySelector('ul');
+        const media = card.querySelector('.project-media');
+
+        if (!description || !roleList) return;
+
+        const descriptionLong = description.textContent.trim().length > descriptionThreshold;
+        const roleLong = roleList.querySelectorAll('li').length > roleItemThreshold;
+
+        if (!descriptionLong && !roleLong) return;
+
+        description.classList.add('clamped');
+        roleList.classList.add('role-list-clamped');
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'card-toggle-btn';
+        button.textContent = 'See more';
+
+        if (media) {
+          media.style.display = 'none';
+        }
+
+        button.addEventListener('click', function () {
+          const expanded = card.classList.toggle('card-expanded');
+          description.classList.toggle('clamped', !expanded);
+          description.classList.toggle('expanded', expanded);
+          roleList.classList.toggle('role-list-clamped', !expanded);
+          if (media) {
+            media.style.display = expanded ? 'block' : 'none';
+          }
+          button.textContent = expanded ? 'Show less' : 'See more';
+          equalizeCardHeights();
+        });
+
+        roleList.insertAdjacentElement('afterend', button);
+      });
+
+      equalizeCardHeights();
+      initGalleryLightbox();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initReadMore);
+    } else {
+      initReadMore();
+    }
+
+    window.addEventListener('resize', equalizeCardHeights);
+  </script>
 </body>
 </html>
